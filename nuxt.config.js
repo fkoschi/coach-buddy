@@ -49,7 +49,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: process.env.BASE_URL || 'http://localhost:3000/api',
+    baseURL: process.env.BASE_URL || 'http://localhost:5000/api',
     proxy: false,
   },
   /*
@@ -90,9 +90,7 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/sessions', method: 'post', propertyName: 'token' },
-          logout: { url: '/sessions', method: 'delete' },
-          user: { url: '/sessions/user', method: 'get', propertyName: 'data.attributes' }
+          login: { url: '/login', method: 'post', propertyName: 'token' },
         },
         tokenRequired: true,
         tokenType: ''
